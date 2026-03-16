@@ -21,14 +21,13 @@ jobs:
 
     steps:
       - name: Print GITHUB_OUTPUT path
-        run: echo "GITHUB_OUTPUT path: $GITHUB_OUTPUT"
+        run: |
+          echo "GITHUB_OUTPUT path: $GITHUB_OUTPUT"
 
       - name: Build
         id: build
-        run: echo "status=${{ github.event.inputs['build-status'] }}" >> "$GITHUB_OUTPUT"
-
-      - name: Print GITHUB_OUTPUT path after inserting 'build-status'
-        run: echo "GITHUB_OUTPUT path: $GITHUB_OUTPUT"
+        run: |
+          echo "status=${{ github.event.inputs.build-status }}" >> "$GITHUB_OUTPUT"
 
   deploy:
     runs-on: ubuntu-latest
