@@ -3,8 +3,7 @@ on:
     workflow_dispatch:
 jobs:
     mainDeploy:      
-        uses: ghaBabel202603/202603-githubactions-yingyingbabelgroup/.github/workflows/16-1-reusable-workflow.yaml 
-        #./.github/workflows/16-1-reusable-workflow.yaml
+        uses: ./.github/workflows/16-1-reusable-workflow.yaml
         with:
             target-directory: 'src'
     print-outputs:       
